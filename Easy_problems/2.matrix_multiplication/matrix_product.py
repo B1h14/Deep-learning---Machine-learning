@@ -3,7 +3,8 @@ def matrixmul(a:list[list[int|float]],
     n = len(a)
     m = len(b[0])
     p = len(b)
-    assert len(a[0]) == p, "Incompatible matrices for multiplication"
+    if len(a[0]) != p:
+        return -1
     result = [[0 for _ in range(m)] for __ in range(n)]
     for i in range(n):
         for j in range(m):
